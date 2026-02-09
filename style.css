@@ -1,1 +1,91 @@
-/* Add your CSS here */
+/* Basic styles for beginner-friendly lesson.
+	 Uses simple Flexbox for responsive wrapping (no CSS Grid).
+*/
+
+:root{
+  --bg:#03045E;
+  --card:#ffffff;
+  --muted:#b5bfca;
+  --accent:#0066ff;
+  --shadow: 0 6px 18px rgba(12,24,40,0.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:#03045E;
+  color:#ffffff;
+	-webkit-font-smoothing:antialiased;
+}
+
+.container{
+	max-width:1000px;
+	margin:0 auto;
+	padding:0 20px;
+}
+
+/* Hero */
+.hero{
+	padding:48px 0 36px;
+}
+.hero-inner{
+	display:flex;
+	align-items:center;
+	gap:20px;
+}
+.logo{width:170px;px; height:auto; flex:0 0 84px}
+.hero-text h1{margin:0;font-size:28px;line-height:1.05}
+.lead{margin-top:8px;color:var(--muted);max-width:640px}
+
+.section-title{font-size:20px;margin:18px 0 6px}
+.section-sub{margin:0 0 18px;color:var(--muted)}
+
+/* Timeline: simple flex layout that wraps */
+.timeline{
+	display:flex;
+	flex-wrap:wrap;
+	gap:18px;
+}
+
+.card{
+	background:var(--card);
+	border-radius:10px;
+	padding:18px;
+	box-shadow:var(--shadow);
+	flex:1 1 280px; /* responsive width with min size */
+	transition:transform .18s ease,box-shadow .18s ease;
+	min-width:220px;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(12,24,40,0.12)}
+.card-year{
+	display:inline-block;
+	font-weight:700;
+	color:#03045E;
+	background:rgba(0,102,255,0.07);
+	padding:6px 10px;border-radius:8px;font-size:14px;margin-bottom:8px
+}
+.card-title{margin:6px 0 8px;font-size:16px;color:#03045E}
+.card p{margin:0;color:#03045E;line-height:1.4}
+.card-image{
+	width:100%;
+	height:140px;
+	object-fit:cover;
+	border-radius:8px;
+	margin-bottom:10px;
+	display:block;
+}
+
+.site-footer{padding:18px 0;color:var(--muted);font-size:14px;text-align:center}
+
+/* Responsive tweaks */
+@media (max-width:640px){
+	.hero-inner{flex-direction:column;align-items:flex-start}
+	.logo{width:68px}
+	.hero-text h1{font-size:22px}
+}
+
+/* Small accessibility helpers */
+a{color:var(--accent)}
+
