@@ -35,7 +35,7 @@ body{
 	align-items:center;
 	gap:20px;
 }
-.logo{width:170px;px; height:auto; flex:0 0 84px}
+.logo{width:170px; height:auto; flex:0 0 84px}
 .hero-text h1{margin:0;font-size:28px;line-height:1.05}
 .lead{margin-top:8px;color:var(--muted);max-width:640px}
 
